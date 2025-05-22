@@ -183,6 +183,47 @@ r2 = r2_score(Y_test, Y_pred)
 Adjusted = 1 - (1 - r2) * (len(Y_test) - 1) / (len(Y_test) - X_test.shape[1] - 1)
 ```
 
+==============================================================================
+
+#  Pickling 
+
+
+Pickling is the process of **serializing** a Python object — converting it into a byte stream. You can save this stream to a file or transfer it over a network, then later **unpickle** it to restore the original object.
+
+Simply "saving your progress" so you don't have to start over.
+
 ---
+
+##  Pickling vs Unpickling
+
+| Operation     | Description                          | Function          |
+|---------------|--------------------------------------|-------------------|
+| **Pickling**   | Save Python object → byte stream     | `pickle.dump()`   |
+| **Unpickling** | Load byte stream → Python object     | `pickle.load()`   |
+
+---
+
+## Your Code Example
+
+ Trained regression model:
+
+```python
+import pickle
+
+
+pickle.dump(regression, open('regressor.pkl', 'wb')) #Saving the model
+
+model = pickle.load(open('regressor.pkl', 'rb'))#Loading the model
+```
+
+---
+
+## Why Use Pickling?
+
+- Saves time — no need to retrain the model every time
+-  Allows easy deployment and sharing of models
+-  Works well with machine learning pipelines
+
+
 
 
