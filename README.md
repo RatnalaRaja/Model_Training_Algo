@@ -5,7 +5,7 @@ This README is designed to help you revise and understand **Simple Linear Regres
 
 ---
 
-##  Regression Equation
+##   Regression Equation
 
 The model  tries to find the best straight line:
 ```
